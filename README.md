@@ -5,18 +5,8 @@ ConvProject is a C/CUDA application that reads an image file (PNG or JPEG), conv
 ## Project Structure
 
 ```
-CNNProject/
+root/
 ├── .gitignore
-├── .vscode/
-│   ├── .prettierrc
-│   ├── c_cpp_properties.json
-│   └── settings.json
-├── build/
-│   ├── cmake_install.cmake
-│   ├── CMakeCache.txt
-│   ├── CMakeFiles/
-│   ├── CNNProject
-│   └── Makefile
 ├── CMakeLists.txt
 ├── includes/
 │   ├── cnn.h
@@ -41,7 +31,7 @@ CNNProject/
 1. Clone the repository:
     ```sh
     git clone <repository_url>
-    cd CNNProject
+    cd GPU_w_CNN
     ```
 
 2. Create a build directory and navigate into it:
