@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <limits.h>
-#include "cnn.h"
+#include "conv.h"
 
 void apply_kernel_cpu(double *grayscale, double *output, int width, int height, double **kernel) {
     if (!grayscale || !output) {

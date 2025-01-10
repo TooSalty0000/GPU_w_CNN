@@ -1,6 +1,6 @@
 #include <cuda_runtime.h>
 #include <stdio.h>
-#include "cnn.h"
+#include "conv.h"
 
 __global__ void apply_kernel_cuda(double *d_grayscale, double *d_output, int width, int height, double *d_kernel) {
     int x = blockIdx.x * blockDim.x + threadIdx.x;

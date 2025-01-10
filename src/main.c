@@ -6,7 +6,7 @@
 #include <png.h>
 #include <time.h>
 #include <string.h>
-#include "cnn.h"
+#include "conv.h"
 #include "image.h"
 
 void lap_gaus_kernel(double **kernel, int kernel_size, double sigma) {
@@ -119,10 +119,12 @@ int main(int argc, char *argv[]) {
     write_png_file("cuda_output.png", output, width, height);
 
     // Free memory
-    for (int y = 0; y < height; y++) {
-        free(row_pointers[y]);
+    if (row_pointers != NULL) {
+        for (int y = 0; y < height; y++) {
+            free(row_pointers[y]);
+        }
+        free(row_pointers);
     }
-    free(row_pointers);
     free(grayscale);
     free(output);
     for (int i = 0; i < KERNEL_SIZE; i++) {
